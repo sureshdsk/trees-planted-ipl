@@ -15,7 +15,8 @@
 	"dependencies": {
 		"next": "15.3.0",
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"react-dom": "^19.0.0",
+		"react-google-charts": "^5.2.1"
 	},
 	"devDependencies": {
 		"@cloudflare/next-on-pages": "1",
