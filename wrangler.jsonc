@@ -12,7 +12,14 @@
 	"pages_build_output_dir": ".vercel/output/static",
 	"observability": {
 		"enabled": true
-	}
+	},
+	"d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ipl2025",
+      "database_id": "c131b091-a08d-4afe-a8f5-8037647a4c91"
+    }
+  ]
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
