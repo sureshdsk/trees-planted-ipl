@@ -158,7 +158,7 @@ export default function LeaderboardPage() {
     
     setMapData(geoChartData);
     
-    // Set GeoChart options with HTML tooltips enabled
+    // Set GeoChart options with HTML tooltips enabled and black outline
     setChartOptions({
       region: 'IN',
       domain: 'IN',
@@ -183,6 +183,19 @@ export default function LeaderboardPage() {
         showTitle: false
       },
       enableRegionInteractivity: true,
+      // Add outline styling
+      regionStyle: {
+        initial: {
+          stroke: '#000000',
+          strokeWidth: 2,
+          strokeOpacity: 1
+        }
+      },
+      // Enhance the state borders with black outline
+      datalessRegionStyle: {
+        stroke: '#000000',
+        strokeWidth: 1
+      }
     });
     
   }, [stateLeaderboardData]);
@@ -229,8 +242,8 @@ export default function LeaderboardPage() {
         </div>
         
         <div className="bg-white rounded-xl shadow-xl overflow-hidden p-4 mb-8">
-          <div className="shadow-sm border border-gray-100 rounded-lg">
-            {mapData.length > 0 && (
+          {mapData.length > 0 && (
+            <div className="relative border-2 border-black rounded-lg overflow-hidden">
               <Chart
                 chartType="GeoChart"
                 width="100%"
@@ -269,8 +282,10 @@ export default function LeaderboardPage() {
                   },
                 ]}
               />
-            )}
-          </div>
+              <div className="absolute inset-0 pointer-events-none" 
+                   style={{ boxShadow: 'inset 0 0 0 2px black' }}></div>
+            </div>
+          )}
         </div>
         
         {hoveredTeam && (
